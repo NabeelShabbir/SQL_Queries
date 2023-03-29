@@ -1,0 +1,8 @@
+--Q11
+select CORPORATION.C_Name, count(distinct(OWNS.Reg#)) as No_of_planes_OWNED
+FROM OWNS
+INNER JOIN
+CORPORATION
+ON OWNS.Owner_ID = CORPORATION.Owner_ID
+GROUP BY CORPORATION.C_Name
+ORDER BY No_of_planes_OWNED DESC

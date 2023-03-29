@@ -1,0 +1,8 @@
+-- Q3
+Select AIRPLANE.Reg#
+from AIRPLANE
+where Airplane.reg#  not in (
+Select AIRPLANE.Reg#
+from AIRPLANE
+INNER JOIN PLANE_SERVICE
+ON AIRPLANE.REG# = PLANE_SERVICE.Reg#)
